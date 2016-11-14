@@ -1,0 +1,21 @@
+{% extends "Master.html" %}
+
+
+{% block content %}
+<div class="row">
+<div class="col-lg-12">
+
+    {% if TwitUserId > 0 %}
+
+           <h1>Hi   {{ username }} </h1>
+        <div> welcome to my application  :)</div>
+    {% endif %}
+
+    {% if TwitUserId < 0 %}
+        <h1>Hi New user.You need to login to twit</h1>
+    {% endif %}
+</div>
+</div>
+
+
+{% endblock %}

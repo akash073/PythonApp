@@ -1,0 +1,71 @@
+{% extends "Master.html" %}
+
+
+{% block content %}
+    ALL User
+    <br>
+    <table id="tbl" class="table table-bordered table-striped table-condensed flip-content">
+        <thead >
+        <tr>
+            <th>UserId</th>
+            <th>username</th>
+            <th>email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        <tr>
+               <td>{{ user.id }}</td>
+                <td>
+                    {{ user.username  }}
+                </td>
+               <td>{{ user.email }}</td>
+
+                <td>
+                <button class="btn btn-default add">Follow</button>
+                </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<script>
+$(function(){
+    $('.add').click(function(){
+        //alert('clicked');
+        $(this).html('Following');
+        $(this).prop('disabled', true);
+
+        var userid=$(this).closest('tr').find('td:eq(0)').text();
+        var username=$(this).closest('tr').find('td:eq(1)').text();
+        console.log(userid);
+        $(this).closest('tr').css('background-color', '#00bfff');
+        $.ajax({
+            url : "/follow", // the endpoint
+            type : "POST", // http method
+            data : { userid : userid }, // data sent with the post request
+
+            // handle a successful response
+            success : function(data) {
+                //$('#post-text').val(''); // remove the value from the input
+                console.log(data); // log the returned json to the console
+                console.log("success"); // another sanity check
+                if(data==='following'){
+                    alert('You are already follwing the user')
+                }else if(data==='ok'){
+                    alert('Now your are following :'+username)
+                }
+            },
+
+            // handle a non-successful response
+            error : function(xhr,errmsg,err) {
+                $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+    })
+});
+</script>
+{% endblock %}

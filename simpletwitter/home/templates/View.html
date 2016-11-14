@@ -1,0 +1,32 @@
+{% extends "Master.html" %}
+
+
+{% block content %}
+    All posts will be here {{ id }}
+
+
+    <br>
+    <table id="tbl" class="table table-bordered table-striped table-condensed flip-content">
+        <thead >
+        <tr>
+            <th>username</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>PostDate</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td>{{post.username  }}</td>
+                <td>
+                    {{ post.Title }}
+                </td>
+                <td>{{ post.Description }}</td>
+                <td>{{  post.PostDate }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

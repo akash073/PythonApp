@@ -1,0 +1,47 @@
+{% extends "Master.html" %}
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6">  <h3>Welcome to twit {{ username }}</h3></div>
+
+    </div>
+    <br>
+    <form action="/twit" method="post">
+    <div class="row form-group">
+
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-2">
+            title*:
+        </div>
+        <div class="col-lg-4">
+            <input type="text" name="title" class="form-control" required/>
+
+        </div>
+
+    </div>
+    <div class="row form-group">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2">
+           post*
+        </div>
+        <div class="col-lg-4">
+            <textarea  name="description" class="form-control" required>
+            </textarea>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <input type="submit" value="Submit"  CssClass="btn btn-success"  onclick="return confirm('Do you really want to save?');"/>
+
+        </div>
+        <br />
+
+    </div>
+    </form>
+{% endblock %}
