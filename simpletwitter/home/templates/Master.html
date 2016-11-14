@@ -9,7 +9,7 @@
 
     {% load static %}
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css"%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
 
     <!-- Font Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
@@ -18,11 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 
     <!-- Animate -->
-    <link rel="stylesheet" href="{% static "css/animate.css"%}">
-    <link rel="stylesheet" href="{% static "css/bootsnav.css"%}">
-    <link rel="stylesheet" href="{% static "css/overwrite.css"%}">
-    <link rel="stylesheet" href="{% static "skins/color.css"%}">
-    <link href="" rel="stylesheet">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+    <link rel="stylesheet" href="http://bootsnav.com/css/bootsnav.css">
+    <link rel="stylesheet" href="{% static "/css/overwrite.css"%}">
+    <link rel="stylesheet" href="{% static "/skins/color.css"%}">
 
 
     <!-- Bootsnav -->
@@ -33,8 +32,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/bootsnav.js" %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://bootsnav.com/js/bootsnav.js" ></script>
 
 </head>
 <body>
@@ -49,7 +48,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="/home"><img src="{% static "images/brand/logo-black.png"%}" class="logo" alt=""></a>
+            <a class="navbar-brand" href="/home"><span>Welcome</span></a>
         </div>
         <!-- End Header Navigation -->
         <!-- Start Menu -->
@@ -80,11 +79,5 @@
 
     </div>
 </div>
-
-<!-- START JAVASCRIPT -->
-<!-- Placed at the end of the document so the pages load faster -->
-
-
-
 </body>
 </html>
